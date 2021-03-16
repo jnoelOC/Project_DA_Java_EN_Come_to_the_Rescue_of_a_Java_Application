@@ -1,13 +1,28 @@
 package com.hemebiotech.analytics;
 
+import java.util.ArrayList;
+import java.util.TreeMap;
+
 public class AnalyticsCounter {
 
 	public static void main(String args[]) throws Exception {
 
-		Analyze an = new Analyze();
+		String symptomsPathAndFilename = "Project02Eclipse//symptoms.txt";
+		String resultsPathAndFilename = "Project02Eclipse//result.out";
 
-		an.TreatSymptomsFile("Project02Eclipse//symptoms.txt", "Project02Eclipse//result.out");
-		System.out.println("toto");
+		ArrayList<String> listOfSymptoms = new ArrayList<String>();
+		TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter = new TreeMap<String, Integer>();
+
+		Analyze an1 = new Analyze(new ReadSymptomDataFromFile(symptomsPathAndFilename), new TreatData(),
+				new WriteResultDataInFile(resultsPathAndFilename));
+
+		listOfSymptoms = an1.GetSymptoms();
+
+		treeMapOfSymptomsAndTheirCounter = an1.Calculate(listOfSymptoms);
+
+		an1.WriteResults(treeMapOfSymptomsAndTheirCounter);
+
+		System.out.println("Projet 02");
 
 	}
 }

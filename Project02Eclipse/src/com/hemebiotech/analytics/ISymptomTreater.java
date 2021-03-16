@@ -1,7 +1,7 @@
 package com.hemebiotech.analytics;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.TreeMap;
 
 /**
  * Anything that will read symptom data from a source The important part is, the
@@ -21,17 +21,7 @@ public interface ISymptomTreater {
 	 * @return a listing of all symptoms counters obtained
 	 *
 	 */
-	ArrayList<Integer> GetCounters(ArrayList<String> listOfReadSymptomsWithoutDuplicates);
-
-	/**
-	 * If no data is available, return an empty List
-	 * 
-	 * @param a listing of read symptoms with duplicates and no sorted
-	 * 
-	 * @return a listing of all symptoms obtained, without duplicates
-	 *
-	 */
-	ArrayList<String> RemoveDuplicates(ArrayList<String> listOfReadSymptomsAndNoSorted);
+	ArrayList<Integer> RetrieveCounters(ArrayList<String> listOfReadSymptomsWithDuplicates);
 
 	/**
 	 * If no data is available, return an empty Map
@@ -41,5 +31,7 @@ public interface ISymptomTreater {
 	 * @return a map of all symptoms obtained with their associated counter
 	 *
 	 */
-	HashMap<String, Integer> TransformListIntoMap(ArrayList<String> listOfResults, ArrayList<Integer> listOfCounters);
+	TreeMap<String, Integer> TransformListsIntoTreeMap(ArrayList<String> listOfResults,
+			ArrayList<Integer> listOfCounters);
+
 }
