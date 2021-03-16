@@ -7,6 +7,7 @@ public class AnalyticsCounter {
 		Analyze an = new Analyze();
 
 		an.TreatSymptomsFile("Project02Eclipse//symptoms.txt", "Project02Eclipse//result.out");
+		System.out.println("toto");
 
 	}
 }

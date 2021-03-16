@@ -13,11 +13,15 @@ public class Analyze {
 	public void TreatSymptomsFile(String symptomsPathAndFilename, String resultsPathAndFilename) {
 
 		ReadSymptomDataFromFile rs = new ReadSymptomDataFromFile(symptomsPathAndFilename);
-
 		listOfResults = rs.GetSymptoms();
-		listOfCounters = rs.GetCounters(listOfResults);
 
-		mapOfSymptomsAndTheirCounter = rs.TransformListIntoMap(listOfResults, listOfCounters);
+		TreatData td = new TreatData(symptomsPathAndFilename);
+		listOfCounters = td.GetCounters(listOfResults);
+
+		// Je veux une analyse qui getSymptom en base de données, compteet tri par ordre
+		// alpha et qui écrit dans un fichier texte
+
+		mapOfSymptomsAndTheirCounter = td.TransformListIntoMap(listOfResults, listOfCounters);
 		// intermediateListOfResult = rs.RemoveDuplicates(listOfResults);
 
 //		WriteResultDataInFile wr = new WriteResultDataInFile(resultsPathAndFilename, mapOfSymptomsAndTheirCounter);
