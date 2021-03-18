@@ -3,9 +3,8 @@ package com.hemebiotech.analytics;
 import java.util.ArrayList;
 
 /**
- * Anything that will read symptom data from a source The important part is, the
- * return value from the operation, which is a list of strings, that may contain
- * many duplications
+ * Read symptoms data from a source (file or database or API Rest). return a
+ * list of strings, that may contain many duplicates
  * 
  * The implementation does not need to order the list
  * 
@@ -19,6 +18,7 @@ public interface ISymptomReader {
 	 */
 	ArrayList<String> GetSymptoms();
 
+<<<<<<< HEAD
 	/**
 	 * If no data is available, return an empty List
 	 * 
@@ -50,4 +50,6 @@ public interface ISymptomReader {
 	 */
 	// HashMap<String, Integer> TransformListIntoMap(ArrayList<String>
 	// listOfResults, ArrayList<Integer> listOfCounters);
+=======
+>>>>>>> feature/FonctionnaliteCounter
 }

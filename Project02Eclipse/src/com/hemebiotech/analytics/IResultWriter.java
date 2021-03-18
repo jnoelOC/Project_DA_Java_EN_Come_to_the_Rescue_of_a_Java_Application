@@ -1,18 +1,21 @@
 package com.hemebiotech.analytics;
 
+import java.util.TreeMap;
+
 /**
- * Anything that will read symptom data from a source The important part is, the
- * return value from the operation, which is a list of strings, that may contain
- * many duplications
  * 
- * The implementation does not need to order the list
+ * Write into anything (file or database or ...) a treeMap of all found results
  * 
  */
 public interface IResultWriter {
+
 	/**
-	 * Write into Result.out file a list of all found results
+	 * Return nothing
+	 * 
+	 * @param treeMapOfSymptomsAndTheirCounter A treeMap of all Symptoms obtained
+	 *                                         from two lists, without duplicates
 	 * 
 	 */
-	void SetResults();
+	void SetResults(TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter);
 
 }

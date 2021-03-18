@@ -2,8 +2,7 @@ package com.hemebiotech.analytics;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.TreeMap;
 
 /**
  * Simple brute force implementation
@@ -11,37 +10,36 @@ import java.util.Collections;
  */
 public class WriteResultDataInFile implements IResultWriter {
 
-	private ArrayList<String> listOfResults;
 	private String filepath;
 
 	/**
 	 * 
-	 * @param filepath      a full or partial path to file containing list of
-	 *                      results
+	 * @param filepath a full path to file containing list of results
 	 * 
-	 * @param listOfResults to write into Result.out file, one per line
-	 *
+	 * 
 	 */
-	public WriteResultDataInFile(String filepath, ArrayList<String> listOfResults) {
+	public WriteResultDataInFile(String filepath) {
 
-		this.listOfResults = listOfResults;
 		this.filepath = filepath;
 	}
 
+	/**
+	 * 
+	 * Write the symptoms and their counters into a file
+	 * 
+	 * @param treeMapOfSymptomsAndTheirCounter containing the symptoms string with
+	 *                                         their counters integer
+	 * 
+	 */
 	@Override
-	public void SetResults() {
+	public void SetResults(TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter) {
 
 		if (filepath != null) {
 			try {
-
-				Collections.sort(listOfResults);
-
 				FileWriter writer = new FileWriter(filepath);
 
-				int index = 0;
-				while (index < listOfResults.size()) {
-					writer.write(listOfResults.get(index) + "\n");
-					index += 1;
+				for (String s : treeMapOfSymptomsAndTheirCounter.keySet()) {
+					writer.write(s + " = " + treeMapOfSymptomsAndTheirCounter.get(s) + "\n");
 				}
 				writer.close();
 			} catch (IOException e) {

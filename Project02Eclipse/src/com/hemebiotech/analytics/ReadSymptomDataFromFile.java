@@ -4,7 +4,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.Iterator;
+=======
+>>>>>>> feature/FonctionnaliteCounter
 
 /**
  * Simple brute force implementation
@@ -24,14 +27,21 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 
 	/**
 	 * 
+<<<<<<< HEAD
 	 * Read a file of symtpoms strings
 	 * 
 	 * @return A list of strings from a symptoms file
+=======
+	 * Read a file of symptoms strings
+	 * 
+	 * @return A list of Symptoms strings
+>>>>>>> feature/FonctionnaliteCounter
 	 * 
 	 */
 	@Override
 	public ArrayList<String> GetSymptoms() {
-		ArrayList<String> result = new ArrayList<String>();
+
+		ArrayList<String> listOfSymptoms = new ArrayList<String>();
 
 		if (filepath != null) {
 			try {
@@ -39,7 +49,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 				String line = reader.readLine();
 
 				while (line != null) {
-					result.add(line);
+					listOfSymptoms.add(line);
 					line = reader.readLine();
 				}
 				reader.close();
@@ -49,6 +59,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 			}
 		}
 
+<<<<<<< HEAD
 		return result;
 	}
 
@@ -143,5 +154,9 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 //
 //		return mapOfSymptomsAndTheirCounter;
 //	}
+=======
+		return listOfSymptoms;
+	}
+>>>>>>> feature/FonctionnaliteCounter
 
 }
