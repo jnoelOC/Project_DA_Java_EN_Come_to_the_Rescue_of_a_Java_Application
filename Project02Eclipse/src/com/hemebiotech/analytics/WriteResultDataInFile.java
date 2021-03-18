@@ -14,17 +14,23 @@ public class WriteResultDataInFile implements IResultWriter {
 
 	/**
 	 * 
-	 * @param filepath      a full or partial path to file containing list of
-	 *                      results
+	 * @param filepath a full path to file containing list of results
 	 * 
-	 * @param listOfResults to write into Result.out file, one per line
-	 *
+	 * 
 	 */
 	public WriteResultDataInFile(String filepath) {
 
 		this.filepath = filepath;
 	}
 
+	/**
+	 * 
+	 * Write the symptoms and their counters into a file
+	 * 
+	 * @param treeMapOfSymptomsAndTheirCounter containing the symptoms string with
+	 *                                         their counters integer
+	 * 
+	 */
 	@Override
 	public void SetResults(TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter) {
 

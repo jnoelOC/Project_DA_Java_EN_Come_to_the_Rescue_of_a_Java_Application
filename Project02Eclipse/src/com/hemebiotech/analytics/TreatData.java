@@ -12,13 +12,21 @@ public class TreatData implements ISymptomTreater {
 
 	/**
 	 * 
-	 * @param filepath a full or partial path to file with symptom strings in it,
-	 *                 one per line
+	 * Constructor empty.
 	 */
 	public TreatData() {
 
 	}
 
+	/**
+	 * 
+	 * From symptoms, calculate their associated counters
+	 * 
+	 * @param listOfReadSymptoms List of read symptoms
+	 * 
+	 * @return list of counters integers
+	 * 
+	 */
 	@Override
 	public ArrayList<Integer> RetrieveCounters(ArrayList<String> listOfReadSymptoms) {
 
@@ -49,6 +57,18 @@ public class TreatData implements ISymptomTreater {
 		return listOfCounters;
 	}
 
+	/**
+	 * 
+	 * Transform the list of symptoms and the list of associated counters into a
+	 * TreeMap.
+	 * 
+	 * @param listOfSymptoms list of symptoms strings
+	 * 
+	 * @param listOfCounters list of counters integers
+	 * 
+	 * @return treeMap of symptoms and their Counter
+	 * 
+	 */
 	@Override
 	public TreeMap<String, Integer> TransformListsIntoTreeMap(ArrayList<String> listOfSymptoms,
 			ArrayList<Integer> listOfCounters) {

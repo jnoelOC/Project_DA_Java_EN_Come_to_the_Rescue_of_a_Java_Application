@@ -3,8 +3,18 @@ package com.hemebiotech.analytics;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
+/**
+ * 
+ * @author jean-noel.chambe
+ *
+ */
 public class AnalyticsCounter {
-
+	/**
+	 * main
+	 * 
+	 * @param args the arguments
+	 * @throws Exception the management of errors
+	 */
 	public static void main(String args[]) throws Exception {
 
 		String symptomsPathAndFilename = "Project02Eclipse//symptoms.txt";
