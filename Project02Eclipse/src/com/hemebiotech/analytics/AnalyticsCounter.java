@@ -10,7 +10,8 @@ import java.util.TreeMap;
  */
 public class AnalyticsCounter {
 	/**
-	 * main
+	 * main program which read a file of symptoms, calculate counters and write
+	 * results into another file
 	 * 
 	 * @param args the arguments
 	 * @throws Exception the management of errors
@@ -20,17 +21,14 @@ public class AnalyticsCounter {
 		String symptomsPathAndFilename = "Project02Eclipse//symptoms.txt";
 		String resultsPathAndFilename = "Project02Eclipse//result.out";
 
-		ArrayList<String> listOfSymptoms = new ArrayList<String>();
-		TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter = new TreeMap<String, Integer>();
-
 		Analyze an1 = new Analyze(new ReadSymptomDataFromFile(symptomsPathAndFilename), new TreatData(),
 				new WriteResultDataInFile(resultsPathAndFilename));
 
-		listOfSymptoms = an1.getSymptoms();
+		ArrayList<String> listOfSymptoms = an1.getSymptoms();
 
-		treeMapOfSymptomsAndTheirCounter = an1.Calculate(listOfSymptoms);
+		TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter = an1.calculate(listOfSymptoms);
 
-		an1.WriteResults(treeMapOfSymptomsAndTheirCounter);
+		an1.writeResults(treeMapOfSymptomsAndTheirCounter);
 
 		System.out.println("Projet 02");
 

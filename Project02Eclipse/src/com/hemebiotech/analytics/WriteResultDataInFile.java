@@ -32,7 +32,7 @@ public class WriteResultDataInFile implements IResultWriter {
 	 * 
 	 */
 	@Override
-	public void SetResults(TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter) {
+	public void setResults(TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter) {
 
 		if (filepath != null) {
 			try {

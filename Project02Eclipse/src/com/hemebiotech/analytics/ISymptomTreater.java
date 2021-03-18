@@ -19,7 +19,7 @@ public interface ISymptomTreater {
 	 * @return a list of all symptoms associated counters
 	 *
 	 */
-	ArrayList<Integer> RetrieveCounters(ArrayList<String> listOfReadSymptomsWithDuplicates);
+	ArrayList<Integer> retrieveCounters(ArrayList<String> listOfReadSymptomsWithDuplicates);
 
 	/**
 	 * If no data is available, return an empty Map
@@ -31,7 +31,7 @@ public interface ISymptomTreater {
 	 * @return a treeMap of all symptoms obtained with their associated counter
 	 *
 	 */
-	TreeMap<String, Integer> TransformListsIntoTreeMap(ArrayList<String> listOfResults,
+	TreeMap<String, Integer> transformListsIntoTreeMap(ArrayList<String> listOfResults,
 			ArrayList<Integer> listOfCounters);
 
 }

@@ -13,36 +13,34 @@ import java.util.TreeMap;
  */
 public class Analyze {
 
-	private ReadSymptomDataFromFile readSymptomDataFromFile;
-	private TreatData treatData;
-	private WriteResultDataInFile writeResultDataInFile;
+	private ISymptomReader reader;
+	private ISymptomTreater treater;
+	private IResultWriter writer;
 
 	/**
 	 * Constructor of Analyze
 	 * 
-	 * @param readSymptomDataFromFile object
-	 * @param treatData               object
-	 * @param writeResultDataInFile   object
+	 * @param reader  interface
+	 * @param treater interface
+	 * @param writer  interface
 	 */
-	public Analyze(ReadSymptomDataFromFile readSymptomDataFromFile, TreatData treatData,
-			WriteResultDataInFile writeResultDataInFile) {
+	public Analyze(ISymptomReader reader, ISymptomTreater treater, IResultWriter writer) {
 
-		this.readSymptomDataFromFile = readSymptomDataFromFile;
-		this.treatData = treatData;
-		this.writeResultDataInFile = writeResultDataInFile;
+		this.reader = reader;
+		this.treater = treater;
+		this.writer = writer;
 	}
 
 	/**
 	 * 
-	 * Call GetSymptoms method
+	 * Call getSymptoms method
 	 * 
 	 * @return a list of symptoms strings
 	 * 
 	 */
 	public ArrayList<String> getSymptoms() {
-		ArrayList<String> listOfSymptoms;
 
-		listOfSymptoms = readSymptomDataFromFile.getSymptoms();
+		ArrayList<String> listOfSymptoms = reader.getSymptoms();
 
 		return listOfSymptoms;
 	}
@@ -55,26 +53,25 @@ public class Analyze {
 	 * 
 	 * @return a treeMap containing symptoms and their counters
 	 */
-	public TreeMap<String, Integer> Calculate(ArrayList<String> listOfSymptoms) {
-		ArrayList<Integer> listOfCounters;
-		TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter;
+	public TreeMap<String, Integer> calculate(ArrayList<String> listOfSymptoms) {
 
-		listOfCounters = treatData.RetrieveCounters(listOfSymptoms);
+		ArrayList<Integer> listOfCounters = treater.RetrieveCounters(listOfSymptoms);
 
-		treeMapOfSymptomsAndTheirCounter = treatData.TransformListsIntoTreeMap(listOfSymptoms, listOfCounters);
+		TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter = treater.TransformListsIntoTreeMap(listOfSymptoms,
+				listOfCounters);
 
 		return treeMapOfSymptomsAndTheirCounter;
 	}
 
 	/**
 	 * 
-	 * Call SetResults method
+	 * Call setResults method
 	 * 
 	 * @param treeMapOfSymptomsAndTheirCounter treeMap of symptoms and their
 	 *                                         counters
 	 */
-	public void WriteResults(TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter) {
-		writeResultDataInFile.SetResults(treeMapOfSymptomsAndTheirCounter);
+	public void writeResults(TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter) {
+		writer.setResults(treeMapOfSymptomsAndTheirCounter);
 	}
 
 }

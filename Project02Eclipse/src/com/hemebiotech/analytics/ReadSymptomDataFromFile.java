@@ -3,11 +3,8 @@ package com.hemebiotech.analytics;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-<<<<<<< HEAD
-import java.util.Iterator;
-=======
->>>>>>> feature/FonctionnaliteCounter
+import java.util.ArrayList;<<<<<<<HEAD
+import java.util.Iterator;=======>>>>>>>feature/FonctionnaliteCounter
 
 /**
  * Simple brute force implementation
@@ -105,7 +102,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 //	}
 
 	@Override
-	public ArrayList<Integer> GetCounters(ArrayList<String> listOfReadSymptoms) {
+	public ArrayList<Integer> getCounters(ArrayList<String> listOfReadSymptoms) {
 
 		ArrayList<String> listOfSymptoms = listOfReadSymptoms;
 		ArrayList<Integer> listOfCounters = new ArrayList<Integer>();
@@ -154,9 +151,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 //
 //		return mapOfSymptomsAndTheirCounter;
 //	}
-=======
-		return listOfSymptoms;
-	}
->>>>>>> feature/FonctionnaliteCounter
+	=======return listOfSymptoms;
+}>>>>>>>feature/FonctionnaliteCounter
 
 }

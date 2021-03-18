@@ -18,7 +18,9 @@ public interface ISymptomReader {
 	 */
 	ArrayList<String> getSymptoms();
 
-<<<<<<< HEAD
+	<<<<<<<
+
+	HEAD
 	/**
 	 * If no data is available, return an empty List
 	 * 
@@ -27,7 +29,7 @@ public interface ISymptomReader {
 	 * @return a listing of all symptoms counters obtained
 	 *
 	 */
-	ArrayList<Integer> GetCounters(ArrayList<String> listOfReadSymptomsWithoutDuplicates);
+	ArrayList<Integer> getCounters(ArrayList<String> listOfReadSymptomsWithoutDuplicates);
 
 	/**
 	 * If no data is available, return an empty List
@@ -50,6 +52,5 @@ public interface ISymptomReader {
 	 */
 	// HashMap<String, Integer> TransformListIntoMap(ArrayList<String>
 	// listOfResults, ArrayList<Integer> listOfCounters);
-=======
->>>>>>> feature/FonctionnaliteCounter
+	=======>>>>>>>feature/FonctionnaliteCounter
 }

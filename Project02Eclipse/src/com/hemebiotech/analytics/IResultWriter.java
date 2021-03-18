@@ -10,12 +10,11 @@ import java.util.TreeMap;
 public interface IResultWriter {
 
 	/**
-	 * Return nothing
 	 * 
 	 * @param treeMapOfSymptomsAndTheirCounter A treeMap of all Symptoms obtained
 	 *                                         from two lists, without duplicates
 	 * 
 	 */
-	void SetResults(TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter);
+	void setResults(TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter);
 
 }
