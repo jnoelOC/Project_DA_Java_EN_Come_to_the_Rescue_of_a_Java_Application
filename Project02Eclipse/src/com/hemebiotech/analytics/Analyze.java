@@ -39,10 +39,10 @@ public class Analyze {
 	 * @return a list of symptoms strings
 	 * 
 	 */
-	public ArrayList<String> GetSymptoms() {
+	public ArrayList<String> getSymptoms() {
 		ArrayList<String> listOfSymptoms;
 
-		listOfSymptoms = readSymptomDataFromFile.GetSymptoms();
+		listOfSymptoms = readSymptomDataFromFile.getSymptoms();
 
 		return listOfSymptoms;
 	}

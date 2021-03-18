@@ -26,7 +26,7 @@ public class AnalyticsCounter {
 		Analyze an1 = new Analyze(new ReadSymptomDataFromFile(symptomsPathAndFilename), new TreatData(),
 				new WriteResultDataInFile(resultsPathAndFilename));
 
-		listOfSymptoms = an1.GetSymptoms();
+		listOfSymptoms = an1.getSymptoms();
 
 		treeMapOfSymptomsAndTheirCounter = an1.Calculate(listOfSymptoms);
 
