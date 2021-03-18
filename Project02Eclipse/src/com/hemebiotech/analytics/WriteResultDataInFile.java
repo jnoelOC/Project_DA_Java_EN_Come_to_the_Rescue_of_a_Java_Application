@@ -10,7 +10,6 @@ import java.util.TreeMap;
  */
 public class WriteResultDataInFile implements IResultWriter {
 
-	// private TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter;
 	private String filepath;
 
 	/**
@@ -29,9 +28,6 @@ public class WriteResultDataInFile implements IResultWriter {
 	@Override
 	public void SetResults(TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter) {
 
-		// TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter = new
-		// TreeMap<String, Integer>();
-
 		if (filepath != null) {
 			try {
 				FileWriter writer = new FileWriter(filepath);
@@ -44,8 +40,6 @@ public class WriteResultDataInFile implements IResultWriter {
 				e.printStackTrace();
 			}
 		}
-
-		// return treeMapOfSymptomsAndTheirCounter;
 	}
 
 }
