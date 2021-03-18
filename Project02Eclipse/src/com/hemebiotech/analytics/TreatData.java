@@ -28,7 +28,7 @@ public class TreatData implements ISymptomTreater {
 	 * 
 	 */
 	@Override
-	public ArrayList<Integer> RetrieveCounters(ArrayList<String> listOfReadSymptoms) {
+	public ArrayList<Integer> retrieveCounters(ArrayList<String> listOfReadSymptoms) {
 
 		ArrayList<String> listOfSymptoms = listOfReadSymptoms;
 		ArrayList<Integer> listOfCounters = new ArrayList<Integer>();
@@ -70,7 +70,7 @@ public class TreatData implements ISymptomTreater {
 	 * 
 	 */
 	@Override
-	public TreeMap<String, Integer> TransformListsIntoTreeMap(ArrayList<String> listOfSymptoms,
+	public TreeMap<String, Integer> transformListsIntoTreeMap(ArrayList<String> listOfSymptoms,
 			ArrayList<Integer> listOfCounters) {
 
 		TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter = new TreeMap<String, Integer>();

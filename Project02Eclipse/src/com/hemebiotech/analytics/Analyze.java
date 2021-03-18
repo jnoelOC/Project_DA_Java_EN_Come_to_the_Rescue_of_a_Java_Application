@@ -55,9 +55,9 @@ public class Analyze {
 	 */
 	public TreeMap<String, Integer> calculate(ArrayList<String> listOfSymptoms) {
 
-		ArrayList<Integer> listOfCounters = treater.RetrieveCounters(listOfSymptoms);
+		ArrayList<Integer> listOfCounters = treater.retrieveCounters(listOfSymptoms);
 
-		TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter = treater.TransformListsIntoTreeMap(listOfSymptoms,
+		TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter = treater.transformListsIntoTreeMap(listOfSymptoms,
 				listOfCounters);
 
 		return treeMapOfSymptomsAndTheirCounter;
