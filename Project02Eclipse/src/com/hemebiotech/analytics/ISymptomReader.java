@@ -1,7 +1,6 @@
 package com.hemebiotech.analytics;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Anything that will read symptom data from a source The important part is, the
@@ -38,7 +37,8 @@ public interface ISymptomReader {
 	 * @return a listing of all symptoms obtained, without duplicates
 	 *
 	 */
-	ArrayList<String> RemoveDuplicates(ArrayList<String> listOfReadSymptomsAndNoSorted);
+	// ArrayList<String> RemoveDuplicates(ArrayList<String>
+	// listOfReadSymptomsAndNoSorted);
 
 	/**
 	 * If no data is available, return an empty Map
@@ -48,5 +48,6 @@ public interface ISymptomReader {
 	 * @return a map of all symptoms obtained with their associated counter
 	 *
 	 */
-	HashMap<String, Integer> TransformListIntoMap(ArrayList<String> listOfResults, ArrayList<Integer> listOfCounters);
+	// HashMap<String, Integer> TransformListIntoMap(ArrayList<String>
+	// listOfResults, ArrayList<Integer> listOfCounters);
 }
