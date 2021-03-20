@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /**
  * Simple brute force implementation
@@ -52,33 +51,4 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 
 		return listOfSymptoms;
 	}
-
-	@Override
-	public ArrayList<Integer> getCounters(ArrayList<String> listOfReadSymptoms) {
-
-		ArrayList<String> listOfSymptoms = listOfReadSymptoms;
-		ArrayList<Integer> listOfCounters = new ArrayList<Integer>();
-
-		Iterator<String> itLos = listOfSymptoms.iterator();
-		Iterator<String> itLors = listOfReadSymptoms.iterator();
-
-		Integer counter = 0;
-
-		while (itLors.hasNext()) {
-			String oneStrLors = itLors.next();
-			while (itLos.hasNext()) {
-				String oneStrLos = itLos.next();
-				if (oneStrLors.contains(oneStrLos)) {
-					counter += 1;
-				}
-			}
-
-			listOfCounters.add(counter);
-			counter = 0;
-			itLos = listOfSymptoms.iterator(); // reinitialize itLos
-		}
-
-		return listOfCounters;
-	}
-
 }

@@ -11,27 +11,13 @@ import java.util.TreeMap;
 public interface ISymptomTreater {
 
 	/**
-	 * If no data is available, return an empty List
-	 * 
-	 * @param listOfReadSymptomsWithDuplicates a listing of read symptoms with
-	 *                                         possibly duplicates
-	 * 
-	 * @return a list of all symptoms associated counters
-	 *
-	 */
-	ArrayList<Integer> retrieveCounters(ArrayList<String> listOfReadSymptomsWithDuplicates);
-
-	/**
 	 * If no data is available, return an empty Map
 	 * 
-	 * @param listOfResults  a list of symptoms
-	 *
-	 * @param listOfCounters a list of counters
+	 * @param listOfSymptoms a list of symptoms
 	 *
 	 * @return a treeMap of all symptoms obtained with their associated counter
 	 *
 	 */
-	TreeMap<String, Integer> transformListsIntoTreeMap(ArrayList<String> listOfResults,
-			ArrayList<Integer> listOfCounters);
+	TreeMap<String, Integer> retrieveCountersFromSymptomsIntoTreeMap(ArrayList<String> listOfSymptoms);
 
 }

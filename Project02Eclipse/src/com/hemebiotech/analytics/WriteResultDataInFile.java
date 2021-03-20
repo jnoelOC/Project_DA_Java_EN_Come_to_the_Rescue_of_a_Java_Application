@@ -38,8 +38,8 @@ public class WriteResultDataInFile implements IResultWriter {
 			try {
 				FileWriter writer = new FileWriter(filepath);
 
-				for (String s : treeMapOfSymptomsAndTheirCounter.keySet()) {
-					writer.write(s + " = " + treeMapOfSymptomsAndTheirCounter.get(s) + "\n");
+				for (String symptom : treeMapOfSymptomsAndTheirCounter.keySet()) {
+					writer.write(symptom + " = " + treeMapOfSymptomsAndTheirCounter.get(symptom) + "\n");
 				}
 				writer.close();
 			} catch (IOException e) {

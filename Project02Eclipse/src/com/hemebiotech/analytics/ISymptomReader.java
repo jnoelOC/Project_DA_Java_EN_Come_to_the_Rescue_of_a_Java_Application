@@ -17,15 +17,4 @@ public interface ISymptomReader {
 	 *         are possible/probable
 	 */
 	ArrayList<String> getSymptoms();
-
-	/**
-	 * If no data is available, return an empty List
-	 * 
-	 * @param a listing of read symptoms without duplicates
-	 * 
-	 * @return a listing of all symptoms counters obtained
-	 *
-	 */
-	ArrayList<Integer> getCounters(ArrayList<String> listOfReadSymptomsWithoutDuplicates);
-
 }

@@ -5,10 +5,11 @@ import java.util.TreeMap;
 
 /**
  * 
- * @author jean-noel.chambe
  *
- *         This class allows to read a file of symptoms, calculate counters and
- *         write into a file the results
+ * This class allows to read a file of symptoms, calculate counters and write
+ * into a file the results, via 3 interfaces
+ *
+ * @author jean-noel.chambe
  *
  */
 public class Analyze {
@@ -55,10 +56,8 @@ public class Analyze {
 	 */
 	public TreeMap<String, Integer> calculate(ArrayList<String> listOfSymptoms) {
 
-		ArrayList<Integer> listOfCounters = treater.retrieveCounters(listOfSymptoms);
-
-		TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter = treater.transformListsIntoTreeMap(listOfSymptoms,
-				listOfCounters);
+		TreeMap<String, Integer> treeMapOfSymptomsAndTheirCounter = treater
+				.retrieveCountersFromSymptomsIntoTreeMap(listOfSymptoms);
 
 		return treeMapOfSymptomsAndTheirCounter;
 	}
