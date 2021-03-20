@@ -3,8 +3,8 @@ package com.hemebiotech.analytics;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;<<<<<<<HEAD
-import java.util.Iterator;=======>>>>>>>feature/FonctionnaliteCounter
+import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Simple brute force implementation
@@ -24,15 +24,9 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 
 	/**
 	 * 
-<<<<<<< HEAD
 	 * Read a file of symtpoms strings
 	 * 
 	 * @return A list of strings from a symptoms file
-=======
-	 * Read a file of symptoms strings
-	 * 
-	 * @return A list of Symptoms strings
->>>>>>> feature/FonctionnaliteCounter
 	 * 
 	 */
 	@Override
@@ -56,50 +50,8 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 			}
 		}
 
-<<<<<<< HEAD
-		return result;
+		return listOfSymptoms;
 	}
-
-	/**
-	 * 
-	 * Read a file of symtpoms strings
-	 * 
-	 * @return A list of strings from a symptoms file
-	 * 
-	 */
-//	@Override
-//	public ArrayList<String> RemoveDuplicates(ArrayList<String> listOfReadSymptomsAndNoSorted) {
-//
-//		ArrayList<String> listOfSortedSymptoms = listOfReadSymptomsAndNoSorted;
-//		// Integer index = 0;
-//		Iterator<String> itLoss = listOfSortedSymptoms.iterator();
-//		// Iterator<String> itLorsans = listOfReadSymptomsAndNoSorted.iterator();
-//
-//		try {
-//
-//			Collections.sort(listOfReadSymptomsAndNoSorted);
-//
-//			while (itLoss.hasNext()) {
-//				String oneString = itLoss.next();
-//				if (oneString.contains(itLoss.next())) {
-//					itLoss.remove();
-//				}
-//			}
-//
-////			while (index < listOfReadSymptomsAndNoSorted.size()) {
-////				if (!(listOfReadSymptomsAndNoSorted.get(index)
-////						.contains(listOfReadSymptomsAndNoSorted.get(index + 1)))) {
-////					listOfSortedSymptoms.add(listOfReadSymptomsAndNoSorted.get(index));
-////				}
-////				index += 1;
-////			}
-//
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//
-//		return listOfSortedSymptoms;
-//	}
 
 	@Override
 	public ArrayList<Integer> getCounters(ArrayList<String> listOfReadSymptoms) {
@@ -128,30 +80,5 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 
 		return listOfCounters;
 	}
-
-//	@Override
-//	public HashMap<String, Integer> TransformListIntoMap(ArrayList<String> listOfSymptoms,
-//			ArrayList<Integer> listOfCounters) {
-//
-//		HashMap<String, Integer> mapOfSymptomsAndTheirCounter = new HashMap<String, Integer>();
-//		Integer index = 0;
-//
-//		for (String s : listOfSymptoms) {
-//			mapOfSymptomsAndTheirCounter.put(s, listOfCounters.get(index));
-//			index += 1;
-//		}
-//
-////		for (String s : mapOfSymptomsAndTheirCounter.keySet()) {
-////			mapOfSymptomsAndTheirCounter.remove(s);
-////		}
-////
-////		for (String i : mapOfSymptomsAndTheirCounter.keySet()) {
-////			System.out.println("key: " + i + " value: " + mapOfSymptomsAndTheirCounter.get(i));
-////		}
-//
-//		return mapOfSymptomsAndTheirCounter;
-//	}
-	=======return listOfSymptoms;
-}>>>>>>>feature/FonctionnaliteCounter
 
 }
